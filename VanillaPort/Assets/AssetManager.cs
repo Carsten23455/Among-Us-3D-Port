@@ -50,6 +50,8 @@ namespace AU3DPort.VanillaPort.Assets
         public static LoadableResourceAsset Zap { get; } =
             new("AU3DPort.VanillaPort.Assets.Sprites.PowerUps.3D_Zap.png");
 
+        public static LoadableResourceAsset Vent { get; } =
+            new("AU3DPort.VanillaPort.Assets.Sprites.PowerUps.Vent.png");
         public static LoadableResourceAsset GuardPink { get; } =
             new("AU3DPort.VanillaPort.Assets.Sprites.PowerUps.Guard_Pink.png");
 
