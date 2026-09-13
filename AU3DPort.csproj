@@ -96,16 +96,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="VanillaPort\Assets\Animations\" />
     <Folder Include="VanillaPort\Assets\Bundles\" />
+    <Folder Include="VanillaPort\Assets\Dependancies\" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="AchievementsAPI">
-      <HintPath>..\..\..\Downloads\AchievementsAPI.dll</HintPath>
+      <HintPath>VanillaPort\Assets\Dependancies\AchievementsAPI.dll</HintPath>
     </Reference>
     <Reference Include="CorsacCosmetics">
-      <HintPath>..\..\..\AppData\Roaming\allofus\Starlight\data\profiles\132-1788124903564\BepInEx\plugins\CorsacCosmetics.dll</HintPath>
+      <HintPath>VanillaPort\Assets\Dependancies\CorsacCosmetics.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

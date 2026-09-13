@@ -97,7 +97,7 @@ namespace AU3DPort.VanillaPort.Buttons
         public override bool Enabled(RoleBehaviour? role)
         {
             SetButtonLocation(ButtonLocation.BottomRight);
-            return role is Infected;
+            return role is Infected or Zomburrito;
         }
     }
 }

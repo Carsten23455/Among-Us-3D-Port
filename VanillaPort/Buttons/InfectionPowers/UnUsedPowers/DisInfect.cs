@@ -68,7 +68,8 @@ namespace AU3DPort.VanillaPort.Buttons.InfectionPowers.UnUsedPowers
         {
             SetButtonLocation(ButtonLocation.BottomRight);
             var DisInfect = OptionGroupSingleton<InfectionUnusedOrRemovePowers>.Instance;
-            return role is CrewmateTag && DisInfect.DisinfectEnabled && CustomGameModeManager.ActiveMode is TagGamemode;
+            var settings = OptionGroupSingleton<Infection>.Instance;
+            return role is CrewmateTag && DisInfect.DisinfectEnabled && !settings.LTEEnabled &&CustomGameModeManager.ActiveMode is TagGamemode;
         }
     }
 }

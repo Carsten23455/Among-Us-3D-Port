@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AU3DPort.VanillaPort.Gamemodes.Tag;
+using Rewired.Data.Mapping;
 
 namespace AU3DPort.VanillaPort.Options
 {
@@ -28,6 +29,8 @@ namespace AU3DPort.VanillaPort.Options
     {
         public override string GroupName => "Unused/Removed Powers";
         public override uint GroupPriority => 0;
+        public override Func<bool> GroupVisible => () => !OptionGroupSingleton<Infection>.Instance.LTEEnabled;
+
         [ModdedToggleOption("Guard Retexture")]
         public bool PinkGuard { get; set; }
         [ModdedToggleOption("Disinfect PowerUp")]

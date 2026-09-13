@@ -33,6 +33,9 @@ namespace AU3DPort.VanillaPort.Roles.Crewmate
             HideSettings = !OptionGroupSingleton<CriticalCargo>.Instance.Enabled,
             Icon = AssetManager.CriticalCrewmateIcon,
         };
+        
+        
+        
         public bool CanLocalPlayerSeeRole(PlayerControl player)
         {
             var localPlayer = PlayerControl.LocalPlayer;
