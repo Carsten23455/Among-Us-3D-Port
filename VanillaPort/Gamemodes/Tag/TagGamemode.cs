@@ -1,5 +1,7 @@
-﻿using AmongUs.GameOptions;
+﻿using System.Reflection.Metadata.Ecma335;
+using AmongUs.GameOptions;
 using AU3DPort.VanillaPort.Assets;
+using AU3DPort.VanillaPort.Events;
 using AU3DPort.VanillaPort.Modifiers;
 using AU3DPort.VanillaPort.Modifiers.OGInfection;
 using AU3DPort.VanillaPort.Options;
@@ -8,10 +10,15 @@ using AU3DPort.VanillaPort.Roles.Impostor;
 using AU3DPort.VanillaPort.Roles.Infection.Crewmate;
 using AU3DPort.VanillaPort.Roles.Infection.Impostor;
 using BepInEx.Logging;
+using HarmonyLib;
 using InnerNet;
+using MiraAPI.Events;
+using MiraAPI.Events.Vanilla.Gameplay;
+using MiraAPI.GameEnd;
 using MiraAPI.GameModes;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
+using MiraAPI.Networking;
 using MiraAPI.Roles;
 using MiraAPI.Utilities.Assets;
 using Reactor.Utilities;
@@ -145,6 +152,7 @@ public class TagGamemode : AbstractGameMode
     {
         bool allInfected = true;
         bool allTasksComplete = true;
+        runOriginal = false;
 
         foreach (var player in PlayerControl.AllPlayerControls)
         {
@@ -167,13 +175,34 @@ public class TagGamemode : AbstractGameMode
             }
         }
 
-        if (allInfected || allTasksComplete)
+        if (allInfected)
+        {
+            /*
+            var allPlayers = new List<NetworkedPlayerInfo>();
+            foreach (var player in PlayerControl.AllPlayerControls)
+            {
+                if (player.Data.Disconnected) continue;
+                
+                allPlayers.Add(player.Data); 
+            }
+
+            CustomGameOver.Trigger<AllPlayersInfectedGameOver>(allPlayers);
+            */
+            runOriginal = true;
+        }
+
+        if (allTasksComplete)
         {
             runOriginal = true;
         }
-        else
+    }
+    
+    [RegisterEvent]
+    public static void OnGameEnd(GameEndEvent @event)
+    {
+        if (CustomGameOver.Instance is AllPlayersInfectedGameOver)
         {
-            runOriginal = false;
+            Logger<Core>.Info("Infected Won");
         }
     }
 }

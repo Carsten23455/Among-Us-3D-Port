@@ -1,5 +1,6 @@
 ﻿using AU3DPort.VanillaPort.Assets;
 using AmongUs.GameOptions;
+using AU3DPort.VanillaPort.Gamemodes.Tag;
 using MiraAPI;
 using MiraAPI.GameModes;
 using MiraAPI.Roles;
@@ -23,6 +24,8 @@ namespace AU3DPort.VanillaPort.Roles.Impostor
             var roleID = RoleId.Get<WraithGhostRole>();
             return (RoleTypes)roleID;
         }
+
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is not TagGamemode or HideAndSeekMode;
 
         public override void OnDeath(DeathReason reason)
         {

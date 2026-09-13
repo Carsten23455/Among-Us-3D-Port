@@ -8,8 +8,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AU3DPort.VanillaPort.Gamemodes.Tag;
 using AU3DPort.VanillaPort.Options;
 using AU3DPort.VanillaPort.Options.RoleOptions;
+using MiraAPI.GameModes;
 using UnityEngine;
 
 namespace AU3DPort.VanillaPort.Roles.Crewmate
@@ -23,6 +25,8 @@ namespace AU3DPort.VanillaPort.Roles.Crewmate
         public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;
         public List<NetworkedPlayerInfo> winnerslist = new System.Collections.Generic.List<NetworkedPlayerInfo>();
         ScannerOption scanner = OptionGroupSingleton<ScannerOption>.Instance;
+        
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is not TagGamemode or HideAndSeekMode;
 
         public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
         {

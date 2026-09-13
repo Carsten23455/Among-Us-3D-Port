@@ -1,4 +1,6 @@
-﻿using AU3DPort.VanillaPort.Modifiers;
+﻿using AU3DPort.VanillaPort.Gamemodes.Tag;
+using AU3DPort.VanillaPort.Modifiers;
+using MiraAPI.GameModes;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
@@ -24,8 +26,11 @@ namespace AU3DPort.VanillaPort.Roles.Infection.Crewmate
             AffectedByLightOnAirship = false,
             MaxRoleCount = 0,
             CanModifyChance = false,
-            HideSettings = true
+            HideSettings = true,
+            ShowInFreeplay = false
         };
+        
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is TagGamemode;
 
         public override void OnRoleSet()
         {
@@ -33,7 +38,7 @@ namespace AU3DPort.VanillaPort.Roles.Infection.Crewmate
         }
         public override void Initialize(PlayerControl player)
         {
-            player.RpcAddModifier<ChefModifier>();
+          
         }
 
         public override void Deinitialize(PlayerControl targetPlayer)

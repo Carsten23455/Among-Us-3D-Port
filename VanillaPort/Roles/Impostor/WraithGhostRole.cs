@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AU3DPort.VanillaPort.Gamemodes.Tag;
+using MiraAPI.GameModes;
 using UnityEngine;
 
 namespace AU3DPort.VanillaPort.Roles.Impostor
@@ -20,7 +22,9 @@ namespace AU3DPort.VanillaPort.Roles.Impostor
         public string RoleDescription => RoleLongDescription;
         public Color RoleColor => Palette.ImpostorRed;
         public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
-
+        
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is not TagGamemode or HideAndSeekMode;
+        
         public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
         {
             UseVanillaKillButton = false,

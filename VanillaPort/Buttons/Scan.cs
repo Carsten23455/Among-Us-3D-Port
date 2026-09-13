@@ -40,7 +40,7 @@ namespace AU3DPort.VanillaPort.Buttons
 
         protected override void OnClick()
         {
-            var CritCrew = OptionGroupSingleton<CriticalCargo>.Instance;
+            var CritCrew = OptionGroupSingleton<CriticalCrewmateOption>.Instance;
             if (Target == null) return;
 
             ScanResult result;

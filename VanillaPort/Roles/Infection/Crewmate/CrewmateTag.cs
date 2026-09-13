@@ -1,4 +1,6 @@
-﻿using AU3DPort.VanillaPort.Modifiers;
+﻿using AU3DPort.VanillaPort.Gamemodes.Tag;
+using AU3DPort.VanillaPort.Modifiers;
+using MiraAPI.GameModes;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
@@ -22,8 +24,11 @@ namespace AU3DPort.VanillaPort.Roles.Infection.Crewmate
             MaxRoleCount = 0,
             CanModifyChance = false,
             HideSettings = true,
-            CanUseVent = false
+            CanUseVent = false,
+            ShowInFreeplay = false,
         };
+        
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is TagGamemode;
 
         public override void OnRoleSet()
         {

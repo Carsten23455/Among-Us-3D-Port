@@ -7,7 +7,9 @@ using Reactor.Networking.Attributes;
 using System.Collections.Generic;
 using System.Linq;
 using AU3DPort.VanillaPort.GameEnd;
+using AU3DPort.VanillaPort.Gamemodes.Tag;
 using AU3DPort.VanillaPort.Options;
+using MiraAPI.GameModes;
 using UnityEngine;
 
 namespace AU3DPort.VanillaPort.Roles.Crewmate
@@ -22,6 +24,8 @@ namespace AU3DPort.VanillaPort.Roles.Crewmate
         public Color RoleColor => Palette.PlayerColors[5];
         public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;
         public List<NetworkedPlayerInfo> winnerslist = new System.Collections.Generic.List<NetworkedPlayerInfo>();
+        
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is not TagGamemode or HideAndSeekMode;
         
         public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
         {

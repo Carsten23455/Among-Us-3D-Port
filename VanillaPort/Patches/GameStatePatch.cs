@@ -14,6 +14,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AU3DPort.VanillaPort.Gamemodes.Tag;
+using MiraAPI.Events;
+using MiraAPI.Events.Vanilla.Gameplay;
+using MiraAPI.GameEnd;
 using MiraAPI.GameModes;
 using UnityEngine;
 

@@ -17,8 +17,5 @@ namespace AU3DPort.VanillaPort.Options
         public bool Enabled { get; set; }
         //[ModdedNumberOption("Crit Crew Amount", 1, 3, 1)]
         //public float CriticalCrewmateAmount { get; set; }
-
-        [ModdedNumberOption("Scan Fail Chance", 0, 50, 10)]
-        public float ScanFailChance { get; set; } = 30f;
     }
 }

@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AU3DPort.VanillaPort.Gamemodes.Tag;
+using MiraAPI.GameModes;
 using UnityEngine;
 using static AU3DPort.VanillaPort.Assets.AssetManager;
 
@@ -20,6 +22,9 @@ namespace AU3DPort.VanillaPort.Roles.Crewmate
         public string RoleDescription => RoleLongDescription;
         public Color RoleColor => Palette.PlayerColors[10];
         public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;
+        
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is not TagGamemode or HideAndSeekMode;
+        
         public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
         {
             MaxRoleCount = 3,

@@ -1,6 +1,8 @@
 ﻿using AU3DPort.VanillaPort.Assets;
+using AU3DPort.VanillaPort.Gamemodes.Tag;
 using AU3DPort.VanillaPort.Modifiers;
 using AU3DPort.VanillaPort.Modifiers.OGInfection;
+using MiraAPI.GameModes;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
@@ -30,8 +32,10 @@ namespace AU3DPort.VanillaPort.Roles.Infection.Impostor
 
         public override void Initialize(PlayerControl player)
         {
-            player.RpcAddModifier<ZomburritoModifier>();
+            
         }
+        
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is TagGamemode;
 
         public override void Deinitialize(PlayerControl targetPlayer)
         {
@@ -52,7 +56,8 @@ namespace AU3DPort.VanillaPort.Roles.Infection.Impostor
             MaxRoleCount = 0,
             IntroSound = AssetManager.InfectedRoleReveal,
             CanModifyChance = false,
-            HideSettings = true
+            HideSettings = true,
+            ShowInFreeplay = false
         };
     }
 }

@@ -7,7 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AU3DPort.VanillaPort.Gamemodes.Tag;
 using AU3DPort.VanillaPort.Options.RoleOptions;
+using MiraAPI.GameModes;
 using UnityEngine;
 
 namespace AU3DPort.VanillaPort.Roles.Crewmate
@@ -21,6 +23,9 @@ namespace AU3DPort.VanillaPort.Roles.Crewmate
         public Color RoleColor => Palette.ImpostorRed;
         public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;
         DoubleAgentSettings doubleAgent = OptionGroupSingleton<DoubleAgentSettings>.Instance;
+        
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is not TagGamemode or HideAndSeekMode;
+        
         public bool CanLocalPlayerSeeRole(PlayerControl player)
         {
             var localPlayer = PlayerControl.LocalPlayer;

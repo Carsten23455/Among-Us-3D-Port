@@ -26,10 +26,7 @@ namespace AU3DPort.VanillaPort.Roles.Infection.Impostor
             
         }
         
-        public bool CanSpawnOnCurrentMode()
-        {
-            return true; //CustomGameModeManager.ActiveMode is TagGamemode;
-        }
+        public bool CanSpawnOnCurrentMode() => CustomGameModeManager.ActiveMode is TagGamemode;
 
         public override void Initialize(PlayerControl player)
         {
@@ -52,7 +49,8 @@ namespace AU3DPort.VanillaPort.Roles.Infection.Impostor
             DefaultChance = 0,
             CanModifyChance = true,
             HideSettings = true,
-            DefaultRoleCount = 0
+            DefaultRoleCount = 0,
+            ShowInFreeplay = false
         };
     }
 }

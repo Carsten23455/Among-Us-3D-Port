@@ -18,7 +18,7 @@ namespace AU3DPort.VanillaPort.Buttons.InfectionPowers.OriginalPowers
         public override string Name => "Vent";
         public override float Cooldown => 0f;
         public override float EffectDuration => 10f;
-        public override LoadableAsset<Sprite> Sprite => AssetManager.Zap;
+        public override LoadableAsset<Sprite> Sprite => AssetManager.Vent;
         public override bool PauseTimerInVent => false;
         public override BaseKeybind? Keybind => MiraGlobalKeybinds.PrimaryAbility;
         public override int MaxUses => 1;
