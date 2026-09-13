@@ -16,7 +16,7 @@ using xCloud;
 
 namespace AU3DPort
 {
-    [BepInPlugin("TeamMessHall.AmongUs2.5D", "Among Us 2.5D", "0.0.0")]
+    [BepInPlugin("TeamMessHall.AmongUs3DPort", "Among Us: 3D Port", "0.0.0")]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
     [BepInDependency(MiraApiPlugin.Id)]
@@ -28,7 +28,7 @@ namespace AU3DPort
     {
 
         public Harmony Harmony { get; } = new("com.teammesshall.AmongUs3DPort");
-        public string OptionsTitleText => "AU3DPort";
+        public string OptionsTitleText => "AU3D";
         public ConfigFile GetConfigFile() => Config;
         public static bool IsMobile = OperatingSystem.IsAndroid() || OperatingSystem.IsIOS();
 

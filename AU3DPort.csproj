@@ -16,6 +16,9 @@
     <EmbeddedResource Include="VanillaPort\Assets\Bundles\au3dhats.ccb" />
     <None Remove="VanillaPort\Assets\Bundles\au2.5d-data" />
     <EmbeddedResource Include="VanillaPort\Assets\Bundles\au2.5d-data" />
+    <None Remove="VanillaPort\Assets\Bundles\au2.5d-data-android" />
+    <EmbeddedResource Include="VanillaPort\Assets\Bundles\au2.5d-data-android" />
+    <None Remove="VanillaPort\Assets\Sprites\Buttons\Vent.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -71,6 +74,7 @@
     <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Unleash_Wraith.png" />
     <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\VigiKillIcon.png" />
     <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Wraith_Icon.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\Vent.png" />
     <EmbeddedResource Include="VanillaPort\Assets\Sprites\RoleIcons\CC_icon_tut.png" />
     <EmbeddedResource Include="VanillaPort\Assets\Sprites\RoleIcons\Deputy_icon_tut.png" />
     <EmbeddedResource Include="VanillaPort\Assets\Sprites\RoleIcons\Vigilante_icon_tut.png" />
