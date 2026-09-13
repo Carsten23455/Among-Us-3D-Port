@@ -1,0 +1,111 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>AU3DPort</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AirlockClientPort\**" />
+    <EmbeddedResource Remove="AirlockClientPort\**" />
+    <None Remove="AirlockClientPort\**" />
+    <None Remove="VanillaPort\Assets\Bundles\au3dhats.ccb" />
+    <EmbeddedResource Include="VanillaPort\Assets\Bundles\au3dhats.ccb" />
+    <None Remove="VanillaPort\Assets\Bundles\au2.5d-data" />
+    <EmbeddedResource Include="VanillaPort\Assets\Bundles\au2.5d-data" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="VanillaPort\Assets\Audio\infectedReveal.wav" />
+    <None Remove="VanillaPort\Assets\Audio\scannerReveal.wav" />
+    <None Remove="VanillaPort\Assets\Audio\Scan_Completed_1.wav" />
+    <None Remove="VanillaPort\Assets\Audio\Scan_Progress.wav" />
+    <None Remove="VanillaPort\Assets\Audio\Vigilante_Intro.wav" />
+    <None Remove="VanillaPort\Assets\Audio\wraithReveal.wav" />
+    <None Remove="VanillaPort\Assets\Sprites\DeputyIcon.png" />
+    <None Remove="VanillaPort\Assets\Sprites\InfectIcon.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\3D_Detect.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\3D_Disinfect.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\3D_Lights_Out_Power.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\3D_Sabotage_Power.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\3D_Shield.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\3D_Vanish.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\3D_Vanished.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\3D_Zap.png" />
+    <None Remove="VanillaPort\Assets\Sprites\PowerUps\Guard_Pink.png" />
+    <None Remove="VanillaPort\Assets\Sprites\RoleIcons\CC_icon_tut.png" />
+    <None Remove="VanillaPort\Assets\Sprites\RoleIcons\Deputy_icon_tut.png" />
+    <None Remove="VanillaPort\Assets\Sprites\RoleIcons\Vigilante_icon_tut.png" />
+    <None Remove="VanillaPort\Assets\Sprites\RoleIcons\wraith_icon_tut.png" />
+    <None Remove="VanillaPort\Assets\Sprites\Scanner.png" />
+    <None Remove="VanillaPort\Assets\Sprites\VigiKillIcon.png" />
+    <None Remove="VanillaPort\Assets\Sprites\Vigilante_icon_outlined.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="VanillaPort\Assets\Audio\infectedReveal.wav" />
+    <EmbeddedResource Include="VanillaPort\Assets\Audio\scannerReveal.wav" />
+    <EmbeddedResource Include="VanillaPort\Assets\Audio\Scan_Completed_1.wav" />
+    <EmbeddedResource Include="VanillaPort\Assets\Audio\Scan_Progress.wav" />
+    <EmbeddedResource Include="VanillaPort\Assets\Audio\Vigilante_Intro.wav" />
+    <EmbeddedResource Include="VanillaPort\Assets\Audio\wraithReveal.wav" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\DeputyIcon.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\InfectIcon.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\3D_Detect.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\3D_Disinfect.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\3D_Lights_Out_Power.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\3D_Sabotage_Power.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\3D_Shield.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\3D_Vanish.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\3D_Vanished.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\3D_Zap.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\PowerUps\Guard_Pink.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Scanner.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Scan_Crewmate.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Scan_Important.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Scan_Impostor.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Scan_Inconclusive.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Unleash_Wraith.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\VigiKillIcon.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\Buttons\Wraith_Icon.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\RoleIcons\CC_icon_tut.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\RoleIcons\Deputy_icon_tut.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\RoleIcons\Vigilante_icon_tut.png" />
+    <EmbeddedResource Include="VanillaPort\Assets\Sprites\RoleIcons\wraith_icon_tut.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AllOfUs.MiraAPI" Version="0.5.0" />
+    <PackageReference Include="AmongUs.GameLibs.Steam" Version="2026.8.18" />
+    <PackageReference Include="BepInEx.AutoPlugin" Version="1.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="BepInEx.IL2CPP.MSBuild" Version="2.1.0-rc.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.735" />
+    <PackageReference Include="Daemon.AutoResources.MiraAPI" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="VanillaPort\Assets\Animations\" />
+    <Folder Include="VanillaPort\Assets\Bundles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AchievementsAPI">
+      <HintPath>..\..\..\Downloads\AchievementsAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="CorsacCosmetics">
+      <HintPath>..\..\..\AppData\Roaming\allofus\Starlight\data\profiles\132-1788124903564\BepInEx\plugins\CorsacCosmetics.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
